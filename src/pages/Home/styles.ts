@@ -19,6 +19,7 @@ export const Container = styled.div`
 
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-end;
         .imgMaskGroup{
             position: absolute;

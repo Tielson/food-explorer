@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 
 import { api } from '../services/api'
+import { useNavigate } from 'react-router-dom'
 
 
 interface Props {
@@ -12,6 +13,7 @@ export const AuthContext = createContext({})
 function AuthProvider({ children }: Props): JSX.Element {
 
     const [data, setData] = useState<any>({})
+    
 
     async function signIn({ email, password }: { email: string, password: string }) {
 
@@ -46,6 +48,7 @@ function AuthProvider({ children }: Props): JSX.Element {
     }
 
     useEffect(() => {
+      
         try {
             const token = localStorage.getItem("@sessions: token")
             const user: any = localStorage.getItem("@sessions: user")
@@ -59,7 +62,8 @@ function AuthProvider({ children }: Props): JSX.Element {
             console.error("Erro de autenticação:", err);
             localStorage.removeItem("@sessions:token");
             localStorage.removeItem("@sessions:user");
-          }
+        }
+       
     }, [])
 
 
