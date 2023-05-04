@@ -5,7 +5,13 @@ export const Container = styled.div`
  width: 100%;
  background: ${({ theme }) => theme.COLORS.Dark_Dark_400};
 
+animation-name: pageH;
+animation-duration: 2s;
 
+.gradient:hover{
+transition: all 400ms;
+transform: scale(1.01);
+}
 
  .section{
     padding: 3rem 3rem;
@@ -129,4 +135,15 @@ export const Container = styled.div`
     h1{font-size: 1.4rem;}
     h2{    font-size: 1.1rem;}
 }}
+
+@keyframes pageH {
+  0%{
+      opacity: 0;
+      transform: translateX(40px);
+    }
+   100%{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+}
  `;

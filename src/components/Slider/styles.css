@@ -4,7 +4,9 @@
 
 li.splide__slide {
     width: 100%; /* largura do item em telas grandes */
+
   }
+
 
   @media (max-width: 550px) {
 

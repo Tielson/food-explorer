@@ -20,6 +20,9 @@ img{
     width: 16rem;
     padding-top: 4rem;
 }
+img:hover{
+  transform: scale(1.1);
+}
 
 .favorite-button {
   right: 20px;
@@ -98,10 +101,11 @@ color:  ${({ theme }) => theme.COLORS.Tints_Cake_200};
     font-size: 2.0rem;
     padding-bottom: 2.4rem;
     .quantity{
-        display: flex;
-        flex-direction: row;
-        gap: 1.4rem;
-        color: ${({ theme }) => theme.COLORS.Light_Light_100};
+      display: flex;
+      flex-direction: row;
+      gap: 1.4rem;
+      align-items: center;
+      color: ${({ theme }) => theme.COLORS.Light_Light_100};
         
         button{
             background: transparent;

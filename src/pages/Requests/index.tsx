@@ -27,7 +27,7 @@ export function Requests() {
     const mobileRef = useRef<HTMLDivElement>(null);
 
     const navigate = useNavigate()
-    
+
 
     function handleSearch(event: any): void {
         setSearch(event)
@@ -46,7 +46,7 @@ export function Requests() {
         setClasseBotaoCred('cred')
         setActiveP('')
         setActiveC('active')
-        
+
     }
 
     function handlePayment() {
@@ -62,6 +62,9 @@ export function Requests() {
     async function handleFinish() {
         const detailing = cartItem.map((item: any) => `${item.quantity}x ${item.product.name}`).join(', ');
         try {
+            if (!detailing) {
+                return
+            }
             await api.post("/order", {
                 status: 'Pendente',
                 detailing
