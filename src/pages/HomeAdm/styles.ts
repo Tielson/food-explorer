@@ -5,14 +5,21 @@ export const Container = styled.div`
  width: 100%;
  background: ${({ theme }) => theme.COLORS.Dark_Dark_400};
 
+ animation-name: pageH;
+        animation-duration: 2s;
 
+        .gradient:hover{
+            transition: all 400ms;
+            transform: scale(1.01);
+        }
 
  .section{
     padding: 3rem 12rem;
     margin: auto;
     .gradient{
+
         position: relative;
-        background: ${({ theme }) => theme.COLORS.Gradients_200};
+        background: ${({ theme }) => theme.COLORS.Gradients_100};
     height: 17.4rem;
     margin-top: 8rem;
     border-radius: 0.8rem;
@@ -27,6 +34,7 @@ export const Container = styled.div`
     z-index: 100;
             img{    width: 38rem;}
         }
+        
         .textGradient{
             gap: 1rem;
             z-index: 100;
@@ -129,5 +137,15 @@ export const Container = styled.div`
     }
 }
  
+@keyframes pageH {
+  0%{
+      opacity: 0;
+      transform: translateX(40px);
+    }
+   100%{
+      opacity: 1;
+      transform: translateX(0px);
+    }
+}
 
  `;

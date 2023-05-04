@@ -8,6 +8,9 @@ isolation: isolate;
 gap: 2rem;
 z-index: 1000;
 padding: 0 2.4rem;
+transition: all 200ms;
+
+
 
 
 
@@ -19,18 +22,23 @@ border-radius: .8rem;
 button{
     background: none;
     border: none;
-    transition: filter 0.1s;
 }
 
 button:hover{
-    opacity: 0.8;
     filter: none;
+    img{
+      opacity: 1;
+  transition: all 500ms;
+  transform: scale(1.1);
+}
 }
 
 img{
+  opacity: 0.4;
     width: 16rem;
     padding-top: 4rem;
 }
+
 
 
 .heart{
@@ -90,8 +98,8 @@ color:  ${({ theme }) => theme.COLORS.Tints_Cake_200};
 }
 
 @media (max-width:700px) {
-
-    img{
+  img{
+      opacity: 1;
       width: 12rem;
       padding-top: 3rem;
     }
@@ -113,5 +121,7 @@ color:  ${({ theme }) => theme.COLORS.Tints_Cake_200};
       width: 0.7em;
       }
     }
+
+
 
 ` ;
