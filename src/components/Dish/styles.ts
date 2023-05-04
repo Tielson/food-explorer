@@ -16,13 +16,21 @@ border-radius: .8rem;
     background: none;
 }
 
+button:hover{
+    filter: none;
+    img{
+      opacity: 1;
+  transition: all 500ms;
+  transform: scale(1.1);
+}
+}
+
 img{
+  opacity: 0.4;
     width: 16rem;
     padding-top: 4rem;
 }
-img:hover{
-  transform: scale(1.1);
-}
+
 
 .favorite-button {
   right: 20px;
