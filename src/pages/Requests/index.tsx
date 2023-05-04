@@ -92,7 +92,7 @@ export function Requests() {
                         {
                             cartItem.filter((e: any) => e.product.name.toLowerCase().includes(search.toLowerCase()))
                                 .map((dish: any) => (
-                                    <button>
+                                    <button onClick={()=> navigate(`/detail/${dish.product.id}`)}>
                                         <div className="dish-fav">
                                             <img src={`${api.defaults.baseURL}/files/${dish.product.img}`} alt="" />
                                             <div className="rem">

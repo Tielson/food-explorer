@@ -14,26 +14,28 @@ import { cart } from "../../hooks/cart";
 
 
 export function Detail() {
-    const { addCart, valueTotal }: any = cart()
-
-    const [data, setData] = useState<any>({})
-    const avatarUrl = `${api.defaults.baseURL}/files/${data.img}`
-    const [count, setCount] = useState(0)
+    const { addCart, valueTotal, cartItem }: any = cart()
 
     const params = useParams()
     const navigate = useNavigate()
 
+    const [data, setData] = useState<any>({})
+    const avatarUrl = `${api.defaults.baseURL}/files/${data.img}`
+    const [count, setCount] = useState(cartItem.find((product: any) => product.product.id == params.id)?.quantity || 0)
+
+
+
 
 
     function handleCountAdd() {
-        setCount(prevCount => prevCount + 1)
+        setCount((prevCount: any) => prevCount + 1)
     }
 
     function handleCountSubtract() {
         if (count < 1) {
             return
         }
-        setCount(prevCount => prevCount - 1)
+        setCount((prevCount: any) => prevCount - 1)
     }
     console.log(data)
 
@@ -48,6 +50,7 @@ export function Detail() {
 
         }
         fetchDish()
+
     }, [])
     return (
         <Container>

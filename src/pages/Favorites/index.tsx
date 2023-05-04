@@ -5,11 +5,13 @@ import { api } from "../../services/api";
 import { Container } from "./styles"
 import { useEffect, useState } from 'react';
 import img from '../../img/pratos/r1.png'
+import { useNavigate } from "react-router-dom";
 
 
 export function Favorites() {
 
     const [dishs, setDishs] = useState([])
+    const navigate = useNavigate()
 
     const trueFavorites = Object.entries(localStorage)
         .filter(([key, value]) => value === "true")
@@ -57,7 +59,7 @@ export function Favorites() {
                         dishs.filter((e: any) => trueFavorites.includes(e.id.toString()))
                             .filter((e: any) => e.name.toLowerCase().includes(search.toLowerCase()))
                             .map((dish: any) => (
-                                    <button>
+                                <button onClick={()=> navigate(`/detail/${dish.id}`)}>
                                         <div className="dish-fav">
                                             <img src={`${api.defaults.baseURL}/files/${dish.img}`} alt="" />
                                             <div className="rem">

@@ -13,8 +13,9 @@ export function Dish({ img, name, description, price, id }: { img: any, name: st
     const avatarUrl = `${api.defaults.baseURL}/files/${img}`
     const navigate = useNavigate()
     const { user }: any = useAuth()
-    
-    const [count, setCount] = useState(0)
+    const { cartItem }: any = cart()
+
+    const [count, setCount] = useState(cartItem.find((product: any) => product.product.id == id)?.quantity || 0)
     const [isFavorite, setIsFavorite] = useState(
         localStorage.getItem(`favorite_${id}`) === "true" ? true : false
     );
@@ -22,14 +23,14 @@ export function Dish({ img, name, description, price, id }: { img: any, name: st
     const { addCart }: any = cart()
 
     function handleCountAdd() {
-        setCount(prevCount => prevCount + 1)
+        setCount((prevCount: any) => prevCount + 1)
     }
 
     function handleCountSubtract() {
         if (count < 1) {
             return
         }
-        setCount(prevCount => prevCount - 1)
+        setCount((prevCount: any)  => prevCount - 1)
     }
 
     const handleFavorite = () => {
