@@ -34,7 +34,6 @@ Technologies used in the project:
 * React Split
 * vite
 * typescript
-* hamburger-react
 
 <h2>🛡️ License:</h2>
 
