@@ -5,6 +5,7 @@ interface bottomProps {
 
 export const Container = styled.div<bottomProps>`
 footer{
+    padding: 0.7rem 0;
     z-index: 100;
     width: 100%;
     background-color:${({ theme }) => theme.COLORS.Dark_Dark_600} ;
