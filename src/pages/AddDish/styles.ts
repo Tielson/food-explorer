@@ -12,6 +12,9 @@ height: 100vh;
     flex-direction: column;
     padding: 4rem 3rem ;
     margin: auto;
+
+    animation-name: downUp;
+    animation-duration: 2s;
 }
 .imgButton{
     display: flex;
@@ -263,6 +266,17 @@ input{
 }
 
 }
+}
+
+@keyframes downUp {
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
 ` 

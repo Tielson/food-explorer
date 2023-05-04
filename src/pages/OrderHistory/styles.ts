@@ -9,6 +9,9 @@ color: ${({ theme }) => theme.COLORS.Light_Light_300};
     h1{
         margin-bottom: 5rem;
     }
+
+    animation-name: downUp;
+    animation-duration: 2s;
 }
 
 .status{
@@ -93,6 +96,17 @@ td:first-child {
     .table {
     padding: 5rem 0;
 }
+}
+
+@keyframes downUp {
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
 `;

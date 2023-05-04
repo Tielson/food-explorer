@@ -5,6 +5,8 @@ export const Container = styled.div`
 .box{
     padding: 3.4rem 12.3rem ;
     display: flex;
+    animation-name: downUp;
+    animation-duration: 3s;
 }
 .hide{
     display: none !important;
@@ -263,5 +265,16 @@ gap:1.7rem;
      .box {
     padding: 3.4rem 1rem;
 }
+}
+
+@keyframes downUp {
+    0%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 `

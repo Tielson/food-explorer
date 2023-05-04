@@ -131,6 +131,7 @@ color:  ${({ theme }) => theme.COLORS.Tints_Cake_200};
 @media (max-width:700px) {
   .nav{
     img{
+      opacity: 1;
       width: 12rem;
       padding-top: 3rem;
     }
