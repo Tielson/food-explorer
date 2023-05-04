@@ -42,18 +42,11 @@ export function TableAdm({ status, code, detailing, id, updated_at, user_id }: {
             <Arrow cor={selectedId} key={id}>
                 <Column className="status">
                     <button onClick={() => s()} className="s"> <BiDizzy /></button>
-                    <input
-                        list="items"
-                        id="select-item"
-                        name="select-item"
-                        onChange={handleSelect}
-                        value={selectedId}
-                    />
-                    <datalist id="items">
+                     <select onChange={handleSelect} value={selectedId} id="items">
                         <option key="1">Pendente</option>
                         <option key="2">Preparando</option>
                         <option key="3">Entregue</option>
-                    </datalist>
+                    </select>
                 </Column >
                 <Column className="code">{code}</Column>
                 <Column className="detailing">{detailing}</Column>
@@ -67,18 +60,12 @@ export function TableAdm({ status, code, detailing, id, updated_at, user_id }: {
 
                 <div className="statusM">
                     <button onClick={() => s()} className="sM"> <BiDizzy /></button>
-                    <input
-                        list="items"
-                        id="select-item"
-                        name="select-item"
-                        onChange={handleSelect}
-                        value={selectedId}
-                    />
-                    <datalist id="items">
+      
+                    <select onChange={handleSelect} value={selectedId} id="items">
                         <option key="1">Pendente</option>
                         <option key="2">Preparando</option>
                         <option key="3">Entregue</option>
-                    </datalist>
+                    </select>
                 </div>
             </div>
         </Container>

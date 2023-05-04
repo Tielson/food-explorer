@@ -28,7 +28,7 @@ gap: 1rem;
 
 
 
-input{
+select{
   width: 100%;
     height: 32px;
     background: rgb(13, 29, 37);
@@ -61,7 +61,7 @@ vertical-align: middle;
 
 td{
 
-input{
+select{
   width: 150px;
     height: 32px;
     background: rgb(13, 29, 37);
@@ -104,7 +104,7 @@ input{
 }
 .status{
   width: 200px;
-  input{
+  select{
     width: 120px;
   }
 }

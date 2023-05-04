@@ -11,12 +11,17 @@ import { cart } from "../../hooks/cart";
 import { HiOutlineMenu } from 'react-icons/hi';
 import { HiOutlineXMark } from 'react-icons/hi2';
 import { useState } from "react";
+import { Squeeze as Hamburger } from 'hamburger-react'
 
 export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSearch?: (e: any) => any }) {
 
     const { signOut }: any = useAuth()
     const { cartItem }: any = cart()
     const navigate = useNavigate()
+
+    const [isOpen, setOpen] = useState(false)
+
+
 
     const [hidee, setHide] = useState('hide')
 
@@ -44,7 +49,6 @@ export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSea
 
     return (
         <Container>
-
             <div className={`minw ${hidee}`} >
                 <div className="m">
                     <button onClick={() => handleInput()}><HiOutlineXMark /> Menu</button>
