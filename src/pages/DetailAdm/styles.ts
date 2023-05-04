@@ -16,6 +16,8 @@ export const Container = styled.div`
     flex-wrap: nowrap;
     margin: auto;
 
+    animation-name: pageH;
+    animation-duration: 2s;
 .imgButton{
     display: flex;
     align-items: flex-start;
@@ -143,7 +145,15 @@ align-items: center;
 }
 .section .text {
     margin-bottom: 6rem;
-}
-
+}}
+@keyframes pageH {
+  0%{
+      opacity: 0;
+      transform: translateX(40px);
+    }
+   100%{
+      opacity: 1;
+      transform: translateX(0px);
+    }
 }
   `
