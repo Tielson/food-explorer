@@ -32,20 +32,26 @@ border: none;
     gap: 0.8rem;
     align-items: center;
     justify-content: center;
-    background:  ${({ theme }) => theme.COLORS.Tints_Tomato_100};
     position: relative;
-
+    
     p{
         position: absolute;
+        background:  ${({ theme }) => theme.COLORS.Tints_Tomato_100};
         right: 0.3rem;
     top: 0.3rem;
-    background: red;
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+
+
+flex-direction: row;
+gap: 8px;
+
+width: 20px;
+height: 20px;
     }
 }
 

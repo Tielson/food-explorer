@@ -16,7 +16,11 @@ export const Container = styled.div`
 .dishs{
     gap: 2rem;
     display: flex;
-    flex-direction: column;
+}
+
+.org{
+    display: flex;
+    gap: 1rem;
 }
 .section{
     h1{
@@ -48,8 +52,9 @@ export const Container = styled.div`
     }
     .dish-fav{
         display: flex;
-        align-items: center;
-        gap: 1.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 
         h1{
             display: flex;

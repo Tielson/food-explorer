@@ -18,6 +18,8 @@ export const Container = styled.div`
         }
     }
 
+
+
 .section{
     width: 100%;
     overflow: hidden;
@@ -33,13 +35,16 @@ export const Container = styled.div`
     button{
         background: none;
         border: none;
-        width: 30rem;
     display: flex;
     }
+    .org{
+    display: flex;
+    gap: 1rem;
+}
     .dish-fav{
-        display: flex;
-        align-items: center;
-        gap: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
         h1{
             font-family: 'Poppins';

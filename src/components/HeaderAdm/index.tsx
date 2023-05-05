@@ -14,6 +14,7 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { ButtonInclude } from "../ButtonInclude";
 import { ButtonsHeaderAdm } from "../ButtonsHeaderAdm";
 import { api } from "../../services/api";
+import { ButtonMobile } from "../ButtonMobile";
 
 export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any) => any, dt?: boolean }) {
 
@@ -66,11 +67,7 @@ export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any
                     <div className="i">
                         <Input icon={AiOutlineSearch} onChange={(e: any) => { if (handleSearch) handleSearch(e.target.value) }} placeholder="Busque por pratos ou ingredientes" />
                     </div>
-                    <div className="p">
-                        <div>
-                            <ButtonHeader onClick={() => navigate("/orderhistory")} title={`Pedidos (${pendente.length})`} />
-                        </div>
-                    </div>
+
                     <div className="favori">
                         <ButtonHeader onClick={() => navigate("/addDish")} title="Novo prato" isAdmin={true} style={{ background: "none" }} />
                     </div>
@@ -83,8 +80,7 @@ export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any
                 </div>
             </div>
             {/* <-----==== aparece depois de apertar o button ====----> */}
-
-            <div className='menu' >
+            <div className="menu ">
                 <button onClick={() => handleInput()}>
                     <HiOutlineMenu />
                 </button>
@@ -95,6 +91,11 @@ export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any
                     <img src={logo} alt="polygono" />
                 </button>
             </div>
+
+            <div className="p">
+                <ButtonMobile  title={`${cartItem.length}`}  />
+            </div>
+
             {/* <-----====  ====----> */}
 
 

@@ -92,16 +92,19 @@ export function Requests() {
                         {
                             cartItem.filter((e: any) => e.product.name.toLowerCase().includes(search.toLowerCase()))
                                 .map((dish: any) => (
-                                    <button onClick={()=> navigate(`/detail/${dish.product.id}`)}>
-                                        <div className="dish-fav">
+                                    <div className="org">
+                                        <button className="dish-fav" onClick={() => navigate(`/detail/${dish.product.id}`)}>
                                             <img src={`${api.defaults.baseURL}/files/${dish.product.img}`} alt="" />
+                                        </button>
+                                        <div className="dish-fav">
                                             <div className="rem">
-
-                                                <h1> {dish.quantity} x {dish.product.name} <span>{`R$ ${dish.product.price}`}</span></h1>
-                                                <button onClick={(e: any) => removeFromCart(dish.product.id)}>Excluir</button>
+                                                <button className="dish-fav" onClick={() => navigate(`/detail/${dish.product.id}`)}>
+                                                    <h1> {dish.quantity} x {dish.product.name} <span>{`R$ ${dish.product.price}`}</span></h1>
+                                                </button>
                                             </div>
+                                            <button onClick={(e: any) => removeFromCart(dish.product.id)}>Excluir</button>
                                         </div>
-                                    </button>
+                                    </div>
                                 ))
                         }
                     </div>

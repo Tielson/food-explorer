@@ -39,6 +39,9 @@ button{
   display: flex;
     gap: 3rem;
 }
+.p{
+  display: none;
+}
 
 
 
@@ -67,7 +70,9 @@ flex-direction: row;
 justify-content: space-around;
 align-items: center;
 
-
+.p{
+      display: flex;
+    }
 
     .menu{
       display: flex;
@@ -79,7 +84,7 @@ align-items: center;
 
       }
       }
-      div:nth-child(n+4) {
+      div:nth-child(n+5) {
       display: none;
       }
 
@@ -93,18 +98,6 @@ align-items: center;
         }
         .favori::after{
           content: "";
-          border-bottom: 0.1rem solid ${({ theme }) => theme.COLORS.Dark_Dark_1000};
-          flex-direction: column;
-          align-items: flex-start;
-          display: flex;
-          margin-top: 1rem;
-    }
-    .p{
-      width: 100%;
-      white-space: pre;
-    }
-    .p::after{
-      content: "";
           border-bottom: 0.1rem solid ${({ theme }) => theme.COLORS.Dark_Dark_1000};
           flex-direction: column;
           align-items: flex-start;

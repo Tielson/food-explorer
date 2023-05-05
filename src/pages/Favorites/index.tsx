@@ -55,24 +55,28 @@ export function Favorites() {
                 <div className="box">
                     <h1>MEUS FAVORITOS</h1>
                     <div className="ss">
-                    {
-                        dishs.filter((e: any) => trueFavorites.includes(e.id.toString()))
-                            .filter((e: any) => e.name.toLowerCase().includes(search.toLowerCase()))
-                            .map((dish: any) => (
-                                <button onClick={()=> navigate(`/detail/${dish.id}`)}>
-                                        <div className="dish-fav">
+                        {
+                            dishs.filter((e: any) => trueFavorites.includes(e.id.toString()))
+                                .filter((e: any) => e.name.toLowerCase().includes(search.toLowerCase()))
+                                .map((dish: any) => (
+                                    <div className="org">
+                                        <button className="dish-fav" onClick={() => navigate(`/detail/${dish.id}`)}>
                                             <img src={`${api.defaults.baseURL}/files/${dish.img}`} alt="" />
+                                        </button>
+                                        <div className="dish-fav">
                                             <div className="rem">
-                                                <h1>{dish.name}</h1>
-                                                <button onClick={(e: any) => handleFavorite(dish.id)}>Remover dos favoritos</button>
+                                                <button className="dish-fav" onClick={() => navigate(`/detail/${dish.id}`)}>
+                                                    <h1>{dish.name}</h1>
+                                                </button>
                                             </div>
+                                        <button onClick={(e: any) => handleFavorite(dish.id)}>Remover dos favoritos</button>
                                         </div>
-                                    </button>
-                            ))
-                    }
-                                </div>
-                </div>
-            </div>
+                                    </div>
+
+                                ))}
+                    </div >
+                </div >
+            </div >
 
             <Footer pgD />
 

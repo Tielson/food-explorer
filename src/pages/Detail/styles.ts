@@ -28,7 +28,7 @@ export const Container = styled.div`
     grid-row: 1 / 2;
 
     button{
-        border: none;
+    border: none;
     background: none;
     color: ${({ theme }) => theme.COLORS.Light_Light_100};
     font-size: 2.4rem;
