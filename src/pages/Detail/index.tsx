@@ -37,7 +37,6 @@ export function Detail() {
         }
         setCount((prevCount: any) => prevCount - 1)
     }
-    console.log(data)
 
     useEffect(() => {
         async function fetchDish() {

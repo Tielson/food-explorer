@@ -18,7 +18,6 @@ export function SignUp() {
         if (!name || !email || !password) {
             return alert("Por gentileza preencha todos os campos!");
         }
-        console.log(name, email, password)
 
         api.post("/users", { name, email, password })
             .then(() => {
@@ -27,7 +26,6 @@ export function SignUp() {
             })
             .catch(error => {
                 if (error) {
-                    console.log(error)
                     alert(error.response.data.message);
                 }
                 else {

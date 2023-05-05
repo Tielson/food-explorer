@@ -24,7 +24,7 @@ export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any
 
     const [hidee, setHide] = useState('hide')
     const [pendente, setPendente] = useState([])
-    console.log(pendente)
+
     function SignOut() {
         signOut()
         navigate("/")
@@ -93,7 +93,7 @@ export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any
             </div>
 
             <div className="p">
-                <ButtonMobile  title={`${cartItem.length}`}  />
+                <ButtonMobile isAdmin={true} title={`${pendente.length}`} />
             </div>
 
             {/* <-----====  ====----> */}
@@ -110,7 +110,7 @@ export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any
                 </div>
 
                 <div>
-                    <ButtonsHeaderAdm onClick={() => navigate("/orderhistory")} title={`Pedidos (${pendente.length})`} />
+                    <ButtonsHeaderAdm  onClick={() => navigate("/orderhistory")} title={`Pedidos (${pendente.length})`} />
                 </div>
 
 

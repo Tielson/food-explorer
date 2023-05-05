@@ -9,8 +9,6 @@ import { UserRoutes } from "./user.routes";
 
 export function Routes() {
     const { user }: any = useAuth()
-    console.log(user)
-
 
     return (
         <BrowserRouter>

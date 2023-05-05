@@ -8,7 +8,7 @@ export function ButtonMobile({ isAdmin = false, title, style, ...rest }: { isAdm
     const navigate = useNavigate()
     return (
 
-        <Container style={style} onClick={() =>{isAdmin ? navigate("/requests") : navigate("/requests")}} isAdmin={isAdmin}
+        <Container style={style} onClick={() =>{isAdmin ? navigate("/orderhistory") : navigate("/requests")}} isAdmin={isAdmin}
             type="button"
             {...rest}
         >

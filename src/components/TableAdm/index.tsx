@@ -26,11 +26,13 @@ export function TableAdm({ status, code, detailing, id, updated_at, user_id }: {
 
     async function s() {
         try {
-            await api.put("/order/pedido", {
+            console.log(id)
+            await api.put(`/order/pedido/${id}`, {
                 status: selectedId,
                 id,
                 user_id
             })
+            location.reload()
 
         } catch (error) {
             console.log(error)

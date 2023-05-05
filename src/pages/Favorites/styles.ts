@@ -41,6 +41,9 @@ export const Container = styled.div`
     display: flex;
     gap: 1rem;
 }
+.dishs{
+    flex-wrap: wrap;
+}
     .dish-fav{
     display: flex;
     flex-direction: column;
