@@ -7,7 +7,7 @@ import { api } from "../../services/api";
 export function DishAdm({ img, name, description, price, id }: { img: string, name: string, description: string, price: string, id:any }) {
     const navigate = useNavigate()
 
-    const avatarUrl = `${api.defaults.baseURL}/files/${img}`
+    const avatarUrl = img ? `${api.defaults.baseURL}/files/${img}` : '';
     
     function handleDetails(id:any) {
         navigate(`/detailadm/${id}`)

@@ -3,7 +3,6 @@ import { Container } from "./styles";
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { RiSubtractLine } from 'react-icons/ri';
-import DishSalada from '../../img/DishSalada.png'
 import { Tags } from "../../components/Tags";
 import { ButtonInclude } from "../../components/ButtonInclude";
 import { Footer } from "../../components/Footer";
@@ -14,13 +13,13 @@ import { cart } from "../../hooks/cart";
 
 
 export function Detail() {
-    const { addCart, valueTotal, cartItem }: any = cart()
+    const { addCart, cartItem }: any = cart()
 
     const params = useParams()
     const navigate = useNavigate()
 
     const [data, setData] = useState<any>({})
-    const avatarUrl = `${api.defaults.baseURL}/files/${data.img}`
+    const avatarUrl = data.img ? `${api.defaults.baseURL}/files/${data.img}` : '';
     const [count, setCount] = useState(cartItem.find((product: any) => product.product.id == params.id)?.quantity || 0)
 
 

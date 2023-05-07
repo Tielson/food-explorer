@@ -16,7 +16,7 @@ import { HeaderAdm } from "../../components/HeaderAdm";
 export function DetailAdm() {
 
     const [data, setData] = useState<any>({})
-    const avatarUrl = `${api.defaults.baseURL}/files/${data.img}`
+    const avatarUrl = data.img ? `${api.defaults.baseURL}/files/${data.img}` : '';
 
     const params = useParams()
     const navigate = useNavigate()

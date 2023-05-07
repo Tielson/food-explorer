@@ -21,7 +21,7 @@ export function Home() {
     const [search, setSearch] = useState('')
     function handleSearch(event: any): void {
         setSearch(event)
-    }
+    } 
 
     useEffect(() => {
         api.get("dish/meal")

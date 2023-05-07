@@ -6,13 +6,11 @@ import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 import { cart } from "../../hooks/cart";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/auth";
 
 export function Dish({ img, name, description, price, id }: { img: any, name: string, description: string, price: string, id: string }) {
 
-    const avatarUrl = `${api.defaults.baseURL}/files/${img}`
+    const avatarUrl = img ? `${api.defaults.baseURL}/files/${img}` : '';
     const navigate = useNavigate()
-    const { user }: any = useAuth()
     const { cartItem }: any = cart()
 
     const [count, setCount] = useState(cartItem.find((product: any) => product.product.id == id)?.quantity || 0)
