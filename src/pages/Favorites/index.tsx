@@ -1,11 +1,10 @@
 
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
 import { api } from "../../services/api";
 import { Container } from "./styles"
-import { useEffect, useState } from 'react';
-import img from '../../img/pratos/r1.png'
-import { useNavigate } from "react-router-dom";
 
 
 export function Favorites() {
@@ -23,20 +22,14 @@ export function Favorites() {
         setSearch(event)
     }
 
-
-
-
     const handleFavorite = (id: any) => {
         localStorage.removeItem(`favorite_${id}`)
         const t = trueFavorites.filter((e: any) => e.id === id)
         t.splice(1, 1);
     };
 
-
-
-
     useEffect(() => {
-        async function a() {
+        async function toLoad() {
             try {
                 const { data }: any = await api.get("/dish/all")
                 setDishs(data)
@@ -44,7 +37,7 @@ export function Favorites() {
                 console.log(error)
             }
         }
-        a()
+        toLoad()
     }, [trueFavorites]);
 
     return (
@@ -69,17 +62,14 @@ export function Favorites() {
                                                     <h1>{dish.name}</h1>
                                                 </button>
                                             </div>
-                                        <button onClick={(e: any) => handleFavorite(dish.id)}>Remover dos favoritos</button>
+                                            <button onClick={(e: any) => handleFavorite(dish.id)}>Remover dos favoritos</button>
                                         </div>
                                     </div>
-
                                 ))}
                     </div >
                 </div >
             </div >
-
             <Footer pgD />
-
         </Container >
     )
 }

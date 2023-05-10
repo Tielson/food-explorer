@@ -1,27 +1,31 @@
-import { Container } from "./styles";
+import { SplideSlide } from "@splidejs/react-splide";
 import { Header } from "../../components/Header";
-import maskGroup from "../../img/maskGroup.png"
 import { Footer } from "../../components/Footer";
-import { Dish } from "../../components/Dish";
+import maskGroup from "../../img/maskGroup.png"
 import { Slide } from "../../components/Slider";
-
-
-
-
+import { Dish } from "../../components/Dish";
 import { useState, useEffect } from 'react'
 import { api } from "../../services/api";
-import { SplideSlide } from "@splidejs/react-splide";
+import { cart } from "../../hooks/cart";
+import { Container } from "./styles";
+
+
+
+
 
 
 
 export function Home() {
+    const { cartItem }: any = cart()
+
     const [meal, setMeal] = useState([])
     const [dessert, setDessert] = useState([])
     const [drink, setDrink] = useState([])
     const [search, setSearch] = useState('')
+
     function handleSearch(event: any): void {
         setSearch(event)
-    } 
+    }
 
     useEffect(() => {
         api.get("dish/meal")
@@ -39,7 +43,7 @@ export function Home() {
             .catch(error => {
                 console.log(error.response.data.message)
             })
-    }, [])
+    }, [cartItem])
 
     return (
         <Container>
@@ -72,9 +76,6 @@ export function Home() {
                             ))}
                     </Slide>
 
-
-
-
                     <h1>Sobremesas</h1>
                     <Slide>
                         {dessert.filter((e: any) => e.nameD.toLowerCase().includes(search.toLowerCase()))
@@ -85,7 +86,6 @@ export function Home() {
                             ))}
                     </Slide>
 
-
                     <h1>Bebidas</h1>
                     <Slide>
                         {drink.filter((e: any) => e.nameD.toLowerCase().includes(search.toLowerCase()))
@@ -95,7 +95,6 @@ export function Home() {
                                 </SplideSlide>
                             ))}
                     </Slide>
-
                 </div>
             </div>
             <Footer />

@@ -1,14 +1,14 @@
-import { Container } from "./styles";
-import maskGroup from "../../img/maskGroup.png"
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import { HeaderAdm } from "../../components/HeaderAdm";
+import { SplideSlide } from "@splidejs/react-splide";
+import { DishAdm } from "../../components/DishAdm";
 import { Footer } from "../../components/Footer";
 import { Slide } from "../../components/Slider";
-import { HeaderAdm } from "../../components/HeaderAdm";
-import { DishAdm } from "../../components/DishAdm";
-
+import maskGroup from "../../img/maskGroup.png"
 import { useState, useEffect } from 'react'
 import { api } from "../../services/api";
-import { SplideSlide } from "@splidejs/react-splide";
-import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import { Container } from "./styles";
+
 
 export function HomeAdm() {
     const [meal, setMeal] = useState([])
@@ -20,7 +20,6 @@ export function HomeAdm() {
     function handleSearch(event: any): void {
         setSearch(event)
     }
-
 
     useEffect(() => {
         api.get("dish/meal")
@@ -59,7 +58,7 @@ export function HomeAdm() {
                 <div className="swiper-container">
 
                     <h1>Refeições</h1>
-                    
+
                     <Slide>
                         {meal.filter((e: any) => e.nameD.toLowerCase().includes(search.toLowerCase()))
                             .map((e: any) => (

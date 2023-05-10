@@ -1,15 +1,15 @@
+import { ButtonInclude } from "../../components/ButtonInclude";
+import { SetStateAction, useState, useRef } from 'react';
 import { Header } from "../../components/Header";
-import { cart } from "../../hooks/cart";
+import { Footer } from "../../components/Footer";
+import { useNavigate } from "react-router-dom";
+import cred from '../../img/CreditCard.png'
 import { api } from "../../services/api";
+import InputMask from "react-input-mask";
+import { cart } from "../../hooks/cart";
 import { Container } from "./styles";
-import { SetStateAction, useState, useRef, useEffect } from 'react';
 import imgp from '../../img/pix.png'
 import pix from '../../img/pixx.png'
-import cred from '../../img/CreditCard.png'
-import InputMask from "react-input-mask";
-import { Footer } from "../../components/Footer";
-import { ButtonInclude } from "../../components/ButtonInclude";
-import { useNavigate } from "react-router-dom";
 
 export function Requests() {
 

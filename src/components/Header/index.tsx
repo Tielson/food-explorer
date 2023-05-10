@@ -6,21 +6,17 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { Input } from "../Input";
 import singOut from '../../img/SignOut.svg'
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/auth";
 import { cart } from "../../hooks/cart";
 import { HiOutlineMenu } from 'react-icons/hi';
 import { HiOutlineXMark } from 'react-icons/hi2';
 import { useState } from "react";
-import { Squeeze as Hamburger } from 'hamburger-react'
+import { useAuth } from "../../hooks/auth";
 
 export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSearch?: (e: any) => any }) {
 
-    const { signOut }: any = useAuth()
+    const { signOut } : any= useAuth()
     const { cartItem }: any = cart()
     const navigate = useNavigate()
-
-    const [isOpen, setOpen] = useState(false)
-
 
 
     const [hidee, setHide] = useState('hide')
@@ -66,7 +62,7 @@ export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSea
                         <button onClick={() => navigate("/favorites")}> Favoritos</button>
                     </div>
                     <div className="b">
-                        <button onClick={SignOut} >
+                        <button onClick={() => SignOut} >
                             Sair
                         </button>
                     </div>
@@ -88,7 +84,7 @@ export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSea
                 </button>
             </div>
             <div className="p">
-                <ButtonMobile  title={`${cartItem.length}`} isAdmin={isAdmin} />
+                <ButtonMobile title={`${cartItem.length}`} isAdmin={isAdmin} />
             </div>
             {/* <-----====  ====----> */}
 
@@ -102,7 +98,7 @@ export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSea
                 <button onClick={() => navigate("/ordersusers")}> Histórico de pedidos</button>
             </div>
             <div >
-                <ButtonHeader onClick= {() => navigate("/requests")} title={`Pedidos (${cartItem.length})`} isAdmin={isAdmin} />
+                <ButtonHeader onClick={() => navigate("/requests")} title={`Pedidos (${cartItem.length})`} isAdmin={isAdmin} />
             </div>
             <button onClick={SignOut} className="signOut">
                 <img src={singOut} alt="Sainda" />

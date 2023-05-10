@@ -9,23 +9,23 @@ grid-template-columns: 1fr 1fr;
 grid-column: 'a','b';
 
 .left{
-    grid-column: 'a';
-    padding: 0 5rem;
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    justify-content: center;
+grid-column: 'a';
+padding: 0 5rem;
+display: flex;
+align-items: center;
+gap: 4rem;
+justify-content: center;
 }
 
 .box{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-column: 'b';
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+grid-column: 'b';
 
     .form{
-        border-radius: 16px;
+border-radius: 16px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -51,8 +51,8 @@ form{
     flex-direction: column;
 
     h2{
-        padding-bottom: 0.8rem;
-        font-family: 'Roboto';
+padding-bottom: 0.8rem;
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
 font-size: 1.6rem;
@@ -60,7 +60,7 @@ color: ${({ theme }) => theme.COLORS.Light_Light_400};
     }
 
     input{
-        display: flex;
+display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -79,10 +79,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 1.6rem;
 color:${({ theme }) => theme.COLORS.Light_Light_100} ;
-    }
-}
-}
-}
+}}}}
 
 .toCreate{
     button{
@@ -97,8 +94,6 @@ color:${({ theme }) => theme.COLORS.Light_Light_100} ;
 }
 
 background-color: ${({ theme }) => theme.COLORS.Dark_Dark_400};
-
-
 
 @media (max-width: 940px) {
     display: flex;
@@ -121,6 +116,5 @@ background-color: ${({ theme }) => theme.COLORS.Dark_Dark_400};
     }  
     .box .form form input{
         width: 29.8rem;
-    }
-}
+}}
 `;

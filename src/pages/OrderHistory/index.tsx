@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
 import { HeaderAdm } from "../../components/HeaderAdm";
-import { Container } from "./styles";
-import { api } from "../../services/api";
 import { Column } from "../../components/Table/styles";
 import { TableAdm } from "../../components/TableAdm";
 import { Footer } from "../../components/Footer";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import { Container } from "./styles";
 
 export function OrderHistory() {
     const [orders, setOrders] = useState<any>([])
+
     useEffect(() => {
         async function response() {
             try {
@@ -20,6 +21,7 @@ export function OrderHistory() {
         }
         response()
     }, [orders])
+    
     return (
         <Container>
             <HeaderAdm />
@@ -27,12 +29,6 @@ export function OrderHistory() {
                 <h1>Pedidos</h1>
                 <table>
                     <thead>
-
-
-
-
-
-
                         <Column className="status">Status</Column>
                         <Column className="code">Código</Column>
                         <Column className="detailing">Detalhamento</Column>
@@ -49,7 +45,7 @@ export function OrderHistory() {
                 </table>
             </div>
 
-            <Footer/>
+            <Footer />
         </Container >
     )
 }

@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 
-
 export default createGlobalStyle`
 *{
     padding: 0;
@@ -35,7 +34,6 @@ a{
          transition: filter 0.2s;
     }
     
-    
     button:hover, a:hover {
      filter: brightness(0.9);
     }
@@ -44,7 +42,6 @@ a{
      font-size: 1.6rem;
      outline: none;
     }
-
 
     .section{
      max-width: 150rem;
@@ -55,7 +52,6 @@ a{
     .pad-15{
         padding: 1.5rem;
     }
-    
 
     .row{
      display: flex;

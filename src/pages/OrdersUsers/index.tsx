@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
-import { Header } from "../../components/Header";
-import { TableAdm } from "../../components/TableAdm";
-import { Container } from "./styles";
-import { api } from "../../services/api";
-import { Column } from "../../components/TableAdm/styles";
-import { Table } from "../../components/Table";
 import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+import { Table } from "../../components/Table";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+import { Container } from "./styles";
 
 export function OrdersUsers() {
     const [orders, setOrders] = useState<any>([])
@@ -14,7 +12,6 @@ export function OrdersUsers() {
             try {
                 const { data }: any = await api.get("/order/toview")
                 setOrders(data)
-
             } catch (error) {
                 console.log(error)
             }

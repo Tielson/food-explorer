@@ -6,7 +6,6 @@ import { ThemeProvider } from 'styled-components'
 import { Routes } from './routes'
 import { AuthProvider } from './hooks/auth'
 import { CartProvider } from './hooks/cart'
-import { Favorites } from './pages/Favorites'
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

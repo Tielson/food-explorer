@@ -19,7 +19,6 @@ import { ButtonMobile } from "../ButtonMobile";
 export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any) => any, dt?: boolean }) {
 
     const { signOut }: any = useAuth()
-    const { cartItem }: any = cart()
     const navigate = useNavigate()
 
     const [hidee, setHide] = useState('hide')

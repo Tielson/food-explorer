@@ -2,7 +2,6 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 export const CartContext = createContext({})
 
-
 interface CartProps {
     items: Array<Item>;
 }
@@ -56,7 +55,7 @@ function CartProvider({ children }: any): JSX.Element {
         }
     }
 
-    function ApagarCart(productId: string) {
+    function ApagarCart() {
         setCartItem([])
     }
 

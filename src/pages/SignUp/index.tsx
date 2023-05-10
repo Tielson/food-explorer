@@ -3,7 +3,7 @@ import poly from '../../img/Polygon 1.svg'
 import food from '../../img/food explorer.svg'
 import { useNavigate } from "react-router-dom";
 import { ButtonSign } from "../../components/ButtonSign";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { api } from "../../services/api";
 
 
@@ -54,7 +54,7 @@ export function SignUp() {
                         <ButtonSign onClick={handleSingUp} title="Criar Conta"></ButtonSign>
                     </form>
                     <div className="toCreate">
-                        <button onClick={()=> navigate("/")}>Já tenho uma conta</button>
+                        <button onClick={() => navigate("/")}>Já tenho uma conta</button>
                     </div>
                 </div>
             </div>

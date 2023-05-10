@@ -29,12 +29,10 @@ height: 100vh;
     display: flex;
     gap: 1rem;
 
-        svg{
-            width: 2.4rem;
-            height: 2.4rem;
-        }
-    }
-}
+svg{
+width: 2.4rem;
+height: 2.4rem;
+}}}
 
 h1{
     font-family: 'Poppins';
@@ -46,7 +44,6 @@ h1{
 }
 
 .data{
-
 display: grid;
 gap: 3.2rem;
 width: 100%;
@@ -85,8 +82,6 @@ width: 100%;
             color: ${({ theme }) => theme.COLORS.Light_Light_400};
     }
 
-           
-
     h2{
         font-family: 'Roboto';
         font-style: normal;
@@ -110,19 +105,9 @@ width: 100%;
             padding: .4rem 1.0rem;
             input{
             display: none;
-            }
-        }
-    }
-    .name{
-     
-    }
-    .category{
-    
-    }
-    }
+            }}}}
 
     .line2{
-        
     flex-direction: row;
     align-items: center;
     grid-area: 'b';
@@ -179,9 +164,7 @@ input{
     justify-content: center;
     background-color: ${({ theme }) => theme.COLORS.Dark_Dark_800};
     border-radius: .8rem;
-    }
-    }
-}
+}}}
 
 .line3{
 
@@ -196,8 +179,8 @@ input{
         line-height: 100%;
         color: ${({ theme }) => theme.COLORS.Light_Light_400};
         padding-bottom: 1.6rem;
-}
-}
+}}
+
 .buttons{
     display: flex;
     justify-content: flex-end;
@@ -227,8 +210,7 @@ input{
     width: 135px;
     height: 48px;
     }
-}
-}
+}}
 
 
 @media (max-width: 1000px) {
@@ -269,12 +251,8 @@ input{
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-}
+}}}}
 
-}
-}
-
-` 
+`
 
 

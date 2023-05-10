@@ -1,15 +1,15 @@
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
-import { InputTags } from "../../components/InputTags";
-import UploadSimple from '../../img/UploadSimple.png'
-import { Footer } from "../../components/Footer";
-import { Container } from "./styles";
-import { useEffect, useState } from 'react';
-import { Textarea } from "../../components/Textarea";
-import { HeaderAdm } from "../../components/HeaderAdm";
-
 import { useNavigate, useParams } from "react-router-dom";
+import { InputTags } from "../../components/InputTags";
+import { HeaderAdm } from "../../components/HeaderAdm";
+import UploadSimple from '../../img/UploadSimple.png'
+import { Textarea } from "../../components/Textarea";
+import { Footer } from "../../components/Footer";
+import { useEffect, useState } from 'react';
 import { api } from "../../services/api";
 import InputMask from "react-input-mask";
+import { Container } from "./styles";
+
 
 
 
@@ -39,12 +39,8 @@ export function ToEditDish() {
 
     function handleChangeImg(event: any) {
         const file = event.target.files[0]
-
         setImg(file)
-
     }
-
-
 
     async function updatedDish() {
 
@@ -94,10 +90,10 @@ export function ToEditDish() {
 
 
     useEffect(() => {
-        async function aa() {
+        async function toToad() {
             try {
                 const { data }: any = await api.get(`/dish/preview/${params.id}`)
-
+                
                 setName(data?.[0].nameD)
                 setCategory(data?.[0].category)
                 setPrice(data?.[0].price)
@@ -108,11 +104,7 @@ export function ToEditDish() {
                 console.log(error.response.data.message)
             }
         }
-
-        aa()
-
-
-
+        toToad()
     }, [])
 
     return (
