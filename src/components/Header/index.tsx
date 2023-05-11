@@ -62,7 +62,7 @@ export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSea
                         <button onClick={() => navigate("/favorites")}> Favoritos</button>
                     </div>
                     <div className="b">
-                        <button onClick={() => SignOut} >
+                        <button onClick={SignOut} >
                             Sair
                         </button>
                     </div>
@@ -101,7 +101,7 @@ export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSea
                 <ButtonHeader onClick={() => navigate("/requests")} title={`Pedidos (${cartItem.length})`} isAdmin={isAdmin} />
             </div>
             <button onClick={SignOut} className="signOut">
-                <img src={singOut} alt="Sainda" />
+                <img src={singOut} alt="Sair" />
             </button>
 
 
