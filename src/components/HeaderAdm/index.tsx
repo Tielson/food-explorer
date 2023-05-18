@@ -105,7 +105,7 @@ export function HeaderAdm({ handleSearch, dt = false }: { handleSearch?: (e: any
 
 
                 <div>
-                    <ButtonInclude title="Novo prato" onClick={() => navigate("/adddish")} />
+                    <ButtonInclude title="Novo prato" onAddCart={() => navigate("/adddish")} />
                 </div>
 
                 <div>
