@@ -13,7 +13,7 @@ import { cart } from "../../hooks/cart";
 
 
 export function Detail() {
-    const { addCart, cartItem }: any = cart()
+    const { addCart, cartItem, removeFromCart }: any = cart()
 
     const params = useParams()
     const navigate = useNavigate()
@@ -21,7 +21,7 @@ export function Detail() {
     const [data, setData] = useState<any>({})
     const avatarUrl = data.img ? `${api.defaults.baseURL}/files/${data.img}` : '';
     const [count, setCount] = useState(cartItem.find((product: any) => product.product.id == params.id)?.quantity || 0)
-
+    const [titleButton, setTitleButton] = useState(count < 1 ? 'Incluir' : 'Alterar')
 
 
 
@@ -35,6 +35,15 @@ export function Detail() {
             return
         }
         setCount((prevCount: any) => prevCount - 1)
+    }
+
+    function toggleButon() {
+        if (count < 1) {
+            setTitleButton('Incluir')
+            removeFromCart(Number(params.id))
+        } else {
+            setTitleButton('Alterar')
+        }
     }
 
     useEffect(() => {
@@ -68,7 +77,13 @@ export function Detail() {
                         <button onClick={handleCountSubtract} className="quantityB"><RiSubtractLine /></button>
                         <span>{count}</span>
                         <button onClick={handleCountAdd} className="quantityB"><AiOutlinePlus /></button>
-                        <ButtonInclude onClick={() => addCart({ id: data.id, name: data.nameD, price: data.price, img: data.img }, count)} title={`incluir ∙ R$ ${data.price}`} />
+                        <ButtonInclude
+                            onAddCart={() => addCart({ id: data.id, name: data.nameD, price: data.price, img: data.img }, count)}
+                            onToggleButton={() => toggleButon()}
+                            title={`${titleButton} ∙ R$ ${data.price}`}
+                            verify={titleButton} 
+                            />
+                            
                     </div>
                 </div>
             </div>

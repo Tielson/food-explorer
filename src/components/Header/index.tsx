@@ -14,7 +14,7 @@ import { useAuth } from "../../hooks/auth";
 
 export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSearch?: (e: any) => any }) {
 
-    const { signOut } : any= useAuth()
+    const { signOut }: any = useAuth()
     const { cartItem }: any = cart()
     const navigate = useNavigate()
 
@@ -84,7 +84,7 @@ export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSea
                 </button>
             </div>
             <div className="p">
-                <ButtonMobile title={`${cartItem.length}`} isAdmin={isAdmin} />
+                <ButtonMobile title={` ${cartItem.length} `} isAdmin={isAdmin} />
             </div>
             {/* <-----====  ====----> */}
 
@@ -98,7 +98,7 @@ export function Header({ isAdmin, handleSearch }: { isAdmin?: boolean, handleSea
                 <button onClick={() => navigate("/ordersusers")}> Histórico de pedidos</button>
             </div>
             <div >
-                <ButtonHeader onClick={() => navigate("/requests")} title={`Pedidos (${cartItem.length})`} isAdmin={isAdmin} />
+                <ButtonHeader onClick={() => navigate("/requests")} title={`Pedidos ( ${cartItem.length} ) `} isAdmin={isAdmin} />
             </div>
             <button onClick={SignOut} className="signOut">
                 <img src={singOut} alt="Sair" />

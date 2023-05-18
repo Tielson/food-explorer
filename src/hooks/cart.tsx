@@ -35,7 +35,7 @@ function CartProvider({ children }: any): JSX.Element {
             }
             else {
                 const existingItem = cartItem[foundItemIndex];
-                const updatedItem = { ...existingItem, quantity: existingItem.quantity = quantity };
+                const updatedItem = { ...existingItem, quantity: quantity };
                 setCartItem(prevState => [
                     ...prevState.slice(0, foundItemIndex),
                     updatedItem,
@@ -46,6 +46,7 @@ function CartProvider({ children }: any): JSX.Element {
     }
 
     function removeFromCart(productId: string) {
+        console.log(productId);
         const foundItemIndex = cartItem.findIndex(item => item.product.id === productId);
         if (foundItemIndex !== -1) {
             setCartItem(prevState => [

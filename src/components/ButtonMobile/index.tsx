@@ -12,7 +12,7 @@ export function ButtonMobile({ isAdmin = false, title, style, ...rest }: { isAdm
             type="button"
             {...rest}
         >
-            { <div className="bu"> <img src={vector} alt="papel" /> <p>{title} </p></div>}
+            { <div className="bu"> <img src={vector} alt="papel" /> <p> { title } </p></div>}
         </Container>
     )
 }

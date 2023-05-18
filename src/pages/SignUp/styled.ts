@@ -8,6 +8,10 @@ grid-template-columns: 1fr 1fr;
 
 grid-column: 'a','b';
 
+.filled {
+    border: 2px solid #23ec3d87 !important;
+  }
+
 .left{
 grid-column: 'a';
 padding: 0 5rem;
