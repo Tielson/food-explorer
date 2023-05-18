@@ -8,6 +8,11 @@ display: flex;
 animation-name: downUp;
 animation-duration: 3s;
 }
+
+.filled {
+    border: 2px solid #23ec3d87 !important;
+  }
+  
 .hide{
 display: none !important;
 }

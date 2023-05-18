@@ -1,6 +1,8 @@
 import styled from "styled-components";
-
-export const Container = styled.button`
+type TitleProps = {
+    title?: string;
+}
+export const Container = styled.button<TitleProps>`
 width: 100%;
 white-space: pre;
 
@@ -10,9 +12,9 @@ font-style: normal;
 font-weight: 500;
 font-size: 1.4rem;
 line-height: 2.4rem;
-color: ${({theme})=> theme.COLORS.Light_Light_100};
+color: ${({ theme }) => theme.COLORS.Light_Light_100};
 
-background:  ${({ theme }) => theme.COLORS.Tints_Tomato_100};
+background:  ${({ theme, title }) => title === 'Incluir' ? theme.COLORS.Tints_Tomato_100 : 'green'};
 
 display: flex;
 flex-direction: row;

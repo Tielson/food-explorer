@@ -49,7 +49,7 @@ export function DetailAdm() {
                     <p>{data.description} </p>
                     <Tags data={[data.name]} />
                     <div className="quantity">
-                        <ButtonInclude onClick={() => handleEdited()}  title={`Editar prato`} />
+                        <ButtonInclude onAddCart={() => handleEdited()}  title={`Editar prato`} verify="Incluir" />
                     </div>
                 </div>
             </div>

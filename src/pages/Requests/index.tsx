@@ -1,5 +1,5 @@
 import { ButtonInclude } from "../../components/ButtonInclude";
-import { SetStateAction, useState, useRef } from 'react';
+import { SetStateAction, useState, useRef, useEffect } from 'react';
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,8 @@ import { Container } from "./styles";
 import imgp from '../../img/pix.png'
 import pix from '../../img/pixx.png'
 
+import validator from "validator";
+
 export function Requests() {
 
     const { cartItem, removeFromCart, valueTotal, ApagarCart }: any = cart()
@@ -19,7 +21,6 @@ export function Requests() {
     const [classeAtivaCred, setClasseBotaoCred] = useState('hide');
     const [activeP, setActiveP] = useState('active')
     const [activeC, setActiveC] = useState('')
-    const [cardNumber, setCardNumber] = useState('');
     const [hidee, setHide] = useState('')
     const [itens, setItens] = useState('')
 
@@ -58,8 +59,8 @@ export function Requests() {
 
     }
 
-
     async function handleFinish() {
+
         const detailing = cartItem.map((item: any) => `${item.quantity}x ${item.product.name}`).join(', ');
         try {
             if (!detailing) {
@@ -75,13 +76,9 @@ export function Requests() {
         } catch (error) {
             console.log(error)
         }
-
-
     }
 
-    function handleChange(event: { target: { value: SetStateAction<string>; }; }) {
-        setCardNumber(event.target.value);
-    }
+
     return (
         <Container>
             <Header handleSearch={handleSearch} />
@@ -138,8 +135,6 @@ export function Requests() {
                                     id="card-number-input"
                                     mask="9999 9999 9999 9999"
                                     placeholder="0000 0000 0000 0000"
-                                    value={cardNumber}
-                                    onChange={handleChange}
                                 />
                             </div>
                             <div className="VS">
@@ -148,7 +143,9 @@ export function Requests() {
                                     <InputMask
                                         id="date-input"
                                         mask="99/99"
-                                        placeholder="04/25" />
+                                        placeholder="04/25"
+                                    />
+
                                 </div>
                                 <div>
                                     <h2>CVC</h2>
@@ -162,7 +159,7 @@ export function Requests() {
 
                             </div>
 
-                            <ButtonInclude onClick={() => handleFinish()} title="Finalizar pagamento" />
+                            <ButtonInclude onAddCart={() => handleFinish()} title="Finalizar pagamento" />
 
                         </div>
                     </div>

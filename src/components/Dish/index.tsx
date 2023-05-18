@@ -18,17 +18,28 @@ export function Dish({ img, name, description, price, id }: { img: any, name: st
         localStorage.getItem(`favorite_${id}`) === "true" ? true : false
     );
 
-    const { addCart }: any = cart()
+    const [titleButton, setTitleButton] = useState(count < 1 ? 'Incluir' : 'Alterar')
+
+    const { addCart, removeFromCart }: any = cart()
+
+    function toggleButon() {
+        if (count < 1) {
+            setTitleButton('Incluir')
+            removeFromCart(id)
+        } else {
+            setTitleButton('Alterar')
+        }
+    }
 
     function handleCountAdd() {
         setCount((prevCount: any) => prevCount + 1)
     }
 
     function handleCountSubtract() {
-        if (count < 1) {
+        if (count === 0) {
             return
         }
-        setCount((prevCount: any)  => prevCount - 1)
+        setCount((prevCount: any) => prevCount - 1)
     }
 
     const handleFavorite = () => {
@@ -41,8 +52,6 @@ export function Dish({ img, name, description, price, id }: { img: any, name: st
 
     return (
         <Container>
-
-
             <label
                 className={`favorite-button ${isFavorite ? 'label-favorite' : ''}`}
                 htmlFor={`favorite${id}`}
@@ -74,7 +83,11 @@ export function Dish({ img, name, description, price, id }: { img: any, name: st
                     <button onClick={handleCountAdd}><AiOutlinePlus /></button>
                 </div>
                 <div className="incluir">
-                    <ButtonInclude onClick={() => addCart({ id, name, price, img }, count)} title="Incluir" />
+                    <ButtonInclude
+                        onAddCart={() => addCart({ id, name, price, img }, count)}
+                        onToggleButton={() => toggleButon()}
+                        title={titleButton}
+                        verify={titleButton} />
                 </div>
             </div>
 
