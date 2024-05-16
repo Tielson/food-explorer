@@ -1,0 +1,21 @@
+{
+    "name": "Food",
+    "short_name": "Food",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+      {
+        "src": "./src/img/DishSalada.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./src/img/DishSalada.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  
